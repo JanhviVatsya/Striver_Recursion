@@ -1,0 +1,52 @@
+1.) When to use loop and when not...
+
+Problem 1: Combination Sum II
+
+Each number can be used at most once.
+
+Input may have duplicates → we must skip duplicates.
+
+That’s why we use a for loop.
+
+👉 Why?
+Because at each recursion step, we are exploring all possible next choices starting from index.
+We iterate i from index to n-1:
+
+Pick one element (candidates[i])
+
+Recurse with i+1 (move forward so we don’t reuse the same element).
+
+Continue exploring next elements in loop.
+
+The for loop is the mechanism to try each next element once per level.
+
+Problem 2: Combination Sum I
+
+Each number can be used unlimited times.
+
+Input has distinct numbers only.
+
+That’s why we don’t use a for loop.
+
+👉 Why?
+Here, we only have two choices per index:
+
+Take the element (and stay at the same index, since unlimited use allowed).
+
+Skip the element (move to index+1).
+
+So we don’t need a loop. Instead, we branch recursion explicitly:
+
+recursion(index, …) → take current element again
+
+recursion(index+1, …) → move to next element
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
