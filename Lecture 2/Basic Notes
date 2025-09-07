@@ -1,0 +1,186 @@
+🔥 Major Recursion Patterns
+1. Subsequence / Subset Pattern
+
+Definition: At each index, you decide → take it OR skip it.
+
+Examples:
+
+Subset Sum 1 / 2
+
+Combination Sum 1 / 2
+
+Print all subsequences
+
+Generate subsets (power set)
+
+Clue in problem:
+
+“Find all subsets/combinations”
+
+“Can you form this sum using elements?”
+
+Strategy:
+
+Recursive tree → choose or not choose.
+
+Base case → end of array/string.
+
+Collect results in a list or count them.
+-------------------------------------------------------------------------------------------------
+
+2. Permutation Pattern
+
+Definition: Fix one element → recursively permute the rest.
+
+Examples:
+
+Print all permutations of string/array
+
+Next Permutation problem
+
+Clue in problem:
+
+“All possible orderings/arrangements”
+
+Strategy:
+
+Swap elements or use visited[]
+
+Recurse until all elements placed
+--------------------------------------------------------------------------------------------------------------------
+
+3. Partitioning Pattern
+
+Definition: Break input into valid pieces.
+
+Examples:
+
+Palindrome Partitioning
+
+Word Break
+
+Clue in problem:
+
+“Split string/array into groups based on condition”
+
+Strategy:
+
+At each index → try all valid cuts
+
+Recurse on remainder
+--------------------------------------------------------------------------------------------------------------
+
+4. Decision Tree (Game / Choices)
+
+Definition: Try all possible moves, pick min/max.
+
+Examples:
+
+N-Queens
+
+Sudoku solver
+
+Rat in a Maze
+
+Clue in problem:
+
+“Place item / make move / backtrack if invalid”
+
+Strategy:
+
+Place → recurse → undo (backtrack)
+-----------------------------------------------------------------------------------------------------------------
+
+5. Divide & Conquer
+
+Definition: Split into smaller subproblems → combine results.
+
+Examples:
+
+Merge Sort
+
+Quick Sort
+
+Binary Search
+
+Clue in problem:
+
+“Divide into halves and merge results”
+
+Strategy:
+
+Base case: single element
+
+Recurse on halves, merge results
+----------------------------------------------------------------------------------------------------------------------
+
+6. DP-on-Recursion (Overlapping Subproblems)
+
+Definition: Pure recursion but calls repeat → add memoization.
+
+Examples:
+
+Fibonacci
+
+Coin Change
+
+Longest Common Subsequence (LCS)
+
+Clue in problem:
+
+“Find min/max ways/count/length”
+
+Input sizes large (N up to 1000)
+
+Strategy:
+
+Write recursion → add dp[n][m] to cache results
+-------------------------------------------------------------------------------------------------------------------
+
+🎯 How to Recognize Which Pattern
+
+Subsequence/Subsets → “take or not take?”
+
+Permutation → “all orderings/arrangements?”
+
+Partition → “split input into valid chunks?”
+
+Backtracking/Decision → “place and check if valid?”
+
+Divide & Conquer → “divide halves and merge?”
+
+DP-on-Recursion → “min/max/count + overlapping subcalls?”
+-------------------------------------------------------------------------------------------------------------------
+
+⚡ Tackling Strategy
+
+Write base case clearly → when recursion should stop.
+
+Make the choice → pick element, skip element, swap element, cut string.
+
+Recurse on remainder.
+
+Backtrack if needed → undo choice.
+
+Optimize with memoization (if problem size large).
+-------------------------------------------------------------------------------------------------------------------
+
+👉 Example: Subset Sum
+
+Pattern: Subsequence (take/skip each number).
+
+Base case: end of array.
+
+Recurse: sum including this element + sum excluding it.
+
+👉 Example: Palindrome Partitioning
+
+Pattern: Partition.
+
+At each index: cut string if prefix is palindrome → recurse on remainder.
+
+👉 Example: N-Queens
+
+Pattern: Backtracking.
+
+Place queen → recurse next row → backtrack if invalid.
