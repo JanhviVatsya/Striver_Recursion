@@ -60,10 +60,22 @@ public:
     }
 };
 
+The method you were solving is Backtracking (with loop).
+Not pick/not-pick, because you don’t branch binary at each index, you iterate through possible next choices instead.
 
 ---------------------------------------------------------------------------------------------
 
 ======================== BACKTRACKING SOLUTION =============================================
+
+{         This is essentially the same approach, but you’ve written it in a cleaner form: }
+
+|         k tracks how many numbers left to pick.                                         |
+
+|         n tracks the remaining target sum.                                              |
+
+|         The pruning (if (i > n || k <= 0) break;) makes it efficient.                   |
+
+{             This is also backtracking with loop.                                        }
 
 class Solution {
 public:
